@@ -27,7 +27,7 @@ if app_mode == "Know your terrain":
 
     
     # Load Model
-    model_path = r"C:\\Users\\sansk\\Desktop\\New folder\\terrain_classifier_eurosat.keras"
+    model_path = r"terrain_classifier_eurosat.keras"
     try:
         model = load_model(model_path)
         st.success(f"Model loaded successfully from {model_path}")
