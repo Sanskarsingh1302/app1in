@@ -181,7 +181,11 @@ elif app_mode == "Know What's in your terrain":
     # Upload Images
     uploaded_files = st.file_uploader("Choose images...", type=["jpg", "png", "jpeg"], accept_multiple_files=True)
     
-    model_choice = st.radio("Select a model:", ["YOLOv8m", "YOLO 11m-OBB"])
+    model_choice = st.selectbox(
+    "Choose a Model",
+    ["Balanced Accuracy & Speed", "For Oriented Objects"]
+    )
+
     
     conf_thresh = st.slider("Confidence Threshold", 0.1, 1.0, 0.3, 0.05)
     iou_thresh = st.slider("IOU Threshold", 0.1, 1.0, 0.5, 0.05)
