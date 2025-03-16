@@ -27,7 +27,7 @@ if app_mode == "Know your terrain":
 
     
     # Load Model
-    model_path = r"terrain_classifier_eurosat.keras"
+    model_path = r"terrain_classifier_eurosat (1).keras"
     try:
         model = load_model(model_path)
         st.success(f"Model loaded successfully from {model_path}")
@@ -287,6 +287,4 @@ elif app_mode == "Know What's in your terrain":
                 df = pd.DataFrame(detected_objects)
                 st.table(df)
 
-            # Download JSON Button
-            results_json = json.dumps(combined_results, indent=4)
-            st.download_button("Download Results as JSON", results_json, "results.json", "application/json")
+          
