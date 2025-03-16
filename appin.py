@@ -177,7 +177,14 @@ elif app_mode == "Know What's in your terrain":
 
     # Streamlit UI
     st.title("Know What's in your terrain")
-
+    with st.expander("How to Use", expanded=False):
+        st.markdown(
+            """
+            1. Multiple images can be uploaded in JPG, JPEG, or PNG format.
+            2. The app will process the image and display the objects within the image.
+            3. It will generate the summary of the set of images with detection frequency, proportion of detected objects, confidence score heat map, and confidence score distribution, and a CVS file.
+            """
+        )
     # Upload Images
     uploaded_files = st.file_uploader("Choose images...", type=["jpg", "png", "jpeg"], accept_multiple_files=True)
     
