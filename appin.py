@@ -176,7 +176,7 @@ elif app_mode == "Know What's in your terrain":
     model_yolo11m_obb = YOLO("yolo11n-obb.pt")
 
     # Streamlit UI
-    st.title("YOLO Object Detection App")
+    st.title("Know What's in your terrain")
 
     # Upload Images
     uploaded_files = st.file_uploader("Choose images...", type=["jpg", "png", "jpeg"], accept_multiple_files=True)
