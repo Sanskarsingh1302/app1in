@@ -2,7 +2,7 @@ streamlit
 tensorflow
 pillow
 numpy
-opencv-python
+opencv-python-headless
 ultralytics
 altair
 pandas
