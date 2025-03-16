@@ -27,7 +27,7 @@ if app_mode == "Know your terrain":
 
     
     # Load Model
-    model_path = r"C:\\Users\\sansk\\Desktop\\New folder\\terrain_classifier_eurosat.keras"
+    model_path = r"terrain_classifier_eurosat.keras"
     try:
         model = load_model(model_path)
         st.success(f"Model loaded successfully from {model_path}")
@@ -35,7 +35,7 @@ if app_mode == "Know your terrain":
         st.error(f"Error loading the model: {e}")
 
     # Load your logo and convert it to base64 format
-    logo_path = r"C:\Users\sansk\Downloads\logo (1).png" 
+    logo_path = r"logo (1).png" 
     logo_base64 = get_base64_of_bin_file(logo_path)
 
     # Centering the logo using HTML and CSS
