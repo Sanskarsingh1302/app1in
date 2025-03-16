@@ -286,5 +286,8 @@ elif app_mode == "Know What's in your terrain":
                 st.write(f"### Detection Results for {filename}")
                 df = pd.DataFrame(detected_objects)
                 st.table(df)
+            # Download JSON Button
+            results_json = json.dumps(combined_results, indent=4)
+            st.download_button("Download Results as JSON", results_json, "results.json", "application/json")
 
           
