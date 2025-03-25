@@ -1,10 +1,15 @@
 import streamlit as st
-from PIL import image
-img = image.open("image_processing20200410-20919-19mtdd4.png")
+from PIL import Image
+
+# Open the image
+img = Image.open("image_processing20200410-20919-19mtdd4.png")
+
+# Set the Streamlit page config
 st.set_page_config(
     page_title="Terrain Classification",
-    page_icon= img
+    page_icon=img  # PIL image works fine here
 )
+
 import tensorflow as tf
 from tensorflow.keras.models import load_model
 from PIL import Image
