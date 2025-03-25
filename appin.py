@@ -2,7 +2,7 @@ import streamlit as st
 from PIL import Image
 
 # Open the image
-img = Image.open("image_processing20200410-20919-19mtdd4.png")
+img = Image.open("photo_2025-03-25_15-44-20.jpg")
 
 # Set the Streamlit page config
 st.set_page_config(
