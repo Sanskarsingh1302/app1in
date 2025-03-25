@@ -1,5 +1,8 @@
 import streamlit as st
-st.beta_set_page_config(page_title = "Terrain_Classification", page_icon = "👽")
+st.set_page_config(
+    page_title="Terrain Classification",
+    page_icon="👽"
+)
 import tensorflow as tf
 from tensorflow.keras.models import load_model
 from PIL import Image
