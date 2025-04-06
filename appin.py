@@ -394,7 +394,7 @@ elif app_mode == "Know your terrain":
 
             # Display suitability metrics as progress bars
             st.markdown("**Drone Flight Suitability:**")
-            st.progress(terrain_metrics["suitability"]["drone_flight"])
+            st.progress(float(terrain_metrics["suitability"]["drone_flight"]))
             st.markdown(f"{terrain_metrics['suitability']['drone_flight']:.2f} / 1.0")
 
             st.markdown("**Image Quality Expected:**")
