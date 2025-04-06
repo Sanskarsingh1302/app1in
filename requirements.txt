@@ -2,10 +2,11 @@ streamlit
 tensorflow
 pillow
 numpy
-opencv-python
+opencv-python-headless
 ultralytics
 altair
 pandas
 matplotlib
 seaborn
 plotly
+google-generativeai
