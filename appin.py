@@ -528,7 +528,7 @@ elif app_mode == "Know your terrain":
                 with cols[i % 3]:
                     # Display the image
                     image = Image.open(uploaded_file)
-                    st.image(image, caption=uploaded_file.name, use_column_width=True)
+                    st.image(image, caption=uploaded_file.name, use_Container_width=True)
 
                     # Process the image and get prediction
                     with st.spinner(f"Analyzing {uploaded_file.name}..."):
@@ -849,7 +849,7 @@ elif app_mode == "Know What's in your terrain":
                 if processed_image is None:
                    st.error("No objects detected! Check model and input image.")
                 else:
-                    st.image(processed_image, caption=f"Detected Objects: {uploaded_file.name}", use_column_width=True)
+                    st.image(processed_image, caption=f"Detected Objects: {uploaded_file.name}", use_container_width=True)
                     st.success("Inference Completed!")
                     all_results_data.append((uploaded_file.name, detected_objects))
 
