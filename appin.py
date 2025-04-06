@@ -404,7 +404,7 @@ elif app_mode == "Know your terrain":
             # Display any additional specific metrics
             if "vegetation_density" in terrain_metrics:
                 st.markdown("**Vegetation Density:**")
-                st.progress(terrain_metrics["vegetation_density"])
+                st.progress(float(terrain_metrics["vegetation_density"]))
                 st.markdown(f"{terrain_metrics['vegetation_density']:.2f} / 1.0")
 
             if "urban_density" in terrain_metrics:
