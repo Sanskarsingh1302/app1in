@@ -47,7 +47,7 @@ def show_welcome_page():
         """,
         unsafe_allow_html=True)  # Replace with your logo path
     st.markdown("""<style>
-    .title {font-size:30px; color: #C52831; text-align: center; font-weight: bold;}
+    .title {font-size:65px; color: #C52831; text-align: center; font-weight: bold;}
         
         
     </style>""", unsafe_allow_html=True)
