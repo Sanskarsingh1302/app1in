@@ -25,6 +25,7 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 import plotly.graph_objects as go
 from io import BytesIO
+import google.generativeai as genai
 
 
 # Add this at the top of your app, before the sidebar navigation
@@ -92,20 +93,55 @@ def show_welcome_page():
         For terrain classification, we recommend images taken from 30-100m altitude.
         For object detection, images with clear visibility work best.
         """)
+# Set your Gemini API key securely
+GEMINI_API_KEY = st.secrets["gemini"]["api_key"]
+genai.configure(api_key=GEMINI_API_KEY)
+
 
 # Modify your existing sidebar navigation
 if 'app_mode' not in st.session_state:
     st.session_state.app_mode = "Welcome"
+with st.sidebar:
+    # Sidebar for navigation
+    st.sidebar.title("Classification & Detection")
+    app_mode = st.sidebar.radio(
+        "Choose an App", 
+        ["Welcome", "Know your terrain", "Know What's in your terrain"],
+        index=["Welcome", "Know your terrain", "Know What's in your terrain"].index(st.session_state.app_mode)
+    )
+    st.markdown("---")
+    st.markdown("### 🤖 AI Assistant")
 
-# Sidebar for navigation
-st.sidebar.title("Classification & Detection")
-app_mode = st.sidebar.radio(
-    "Choose an App", 
-    ["Welcome", "Know your terrain", "Know What's in your terrain"],
-    index=["Welcome", "Know your terrain", "Know What's in your terrain"].index(st.session_state.app_mode)
-)
+    # Gemini-based Chatbot
+    if "chat_history" not in st.session_state:
+        st.session_state.chat_history = [
+            "You are a helpful assistant for a Streamlit app called 'Drone-Assisted AI Terrain Mapping and Classification'. The app supports terrain classification, object detection, change detection, and elevation mapping from drone images. Help users understand and use these features."
+        ]
 
-st.session_state.app_mode = app_mode
+    chat_box = st.container(height=300)
+
+    for i, msg in enumerate(st.session_state.chat_history[1:], start=1):
+        role = "user" if i % 2 != 0 else "assistant"
+        with chat_box.chat_message(role):
+            st.markdown(msg)
+
+    if prompt := st.chat_input("Ask me anything about the app..."):
+        st.session_state.chat_history.append(prompt)
+
+        with chat_box.chat_message("user"):
+            st.markdown(prompt)
+
+        try:
+            model = genai.GenerativeModel(model_name="gemini-1.5-pro")
+            response = model.generate_content(prompt)
+            reply = response.text
+        except Exception as e:
+            reply = f"Error: {e}"
+
+        st.session_state.chat_history.append(reply)
+        with chat_box.chat_message("assistant"):
+            st.markdown(reply)
+
 
 # Main app logic
 if app_mode == "Welcome":
