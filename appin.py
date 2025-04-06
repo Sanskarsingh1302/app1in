@@ -210,7 +210,7 @@ elif app_mode == "Know your terrain":
         st.error(f"Error loading the model: {e}")
 
     # Load your logo and convert it to base64 format
-    logo_path = r"C:\Users\sansk\Downloads\logo (1).png" 
+    logo_path = r"logo (1).png" 
     logo_base64 = get_base64_of_bin_file(logo_path)
 
     # Centering the logo using HTML and CSS
