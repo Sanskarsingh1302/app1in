@@ -531,7 +531,7 @@ elif app_mode == "Know your terrain":
                 with cols[i % 3]:
                     # Display the image
                     image = Image.open(uploaded_file)
-                    st.image(image, caption=uploaded_file.name, use_Container_width=True)
+                    st.image(image, caption=uploaded_file.name, use_container_width=True)
 
                     # Process the image and get prediction
                     with st.spinner(f"Analyzing {uploaded_file.name}..."):
