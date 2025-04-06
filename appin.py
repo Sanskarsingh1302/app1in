@@ -93,10 +93,7 @@ def show_welcome_page():
         For terrain classification, we recommend images taken from 30-100m altitude.
         For object detection, images with clear visibility work best.
         """)
-    video_file = open(r"appin1 and 1 more page - Personal 2 - Microsoft​ Edge 2025-03-30 11-44-28.mp4", "rb")
-    video_bytes = video_file.read()
 
-    st.video(video_bytes, loop=True, autoplay=True, muted=True)
 
 
 
