@@ -409,12 +409,12 @@ elif app_mode == "Know your terrain":
 
             if "urban_density" in terrain_metrics:
                 st.markdown("**Urban Density:**")
-                st.progress(terrain_metrics["urban_density"])
+                st.progress(float(terrain_metrics["urban_density"]))
                 st.markdown(f"{terrain_metrics['urban_density']:.2f} / 1.0")
 
             if "water_coverage" in terrain_metrics:
                 st.markdown("**Water Coverage:**")
-                st.progress(terrain_metrics["water_coverage"])
+                st.progress(float(terrain_metrics["water_coverage"]))
                 st.markdown(f"{terrain_metrics['water_coverage']:.2f} / 1.0")
 
         with col2:
