@@ -93,10 +93,19 @@ def show_welcome_page():
         For terrain classification, we recommend images taken from 30-100m altitude.
         For object detection, images with clear visibility work best.
         """)
-    video_file = open("appin1 and 1 more page - Personal 2 - Microsoft​ Edge 2025-03-30 11-44-28.mp4", "rb")
-    video_bytes = video_file.read()
+    st.header("Preview of the Application", divider=True)
 
-    st.video(video_bytes)
+    st.subheader("🌏 Terrain Classification: Analyze your terrain images to identify the type of environment", divider=True)
+    VIDEO_URL = "https://youtu.be/mD9fpW5hsQU"
+    st.video(VIDEO_URL, loop=True)
+
+    st.subheader("🔍 Object Detection: Identify and analyze objects present in your drone imagery", divider=True)
+    VIDEO_URL = "https://youtu.be/irSlvBHFHEQ"
+    st.video(VIDEO_URL, loop=True)
+
+    st.subheader("📊 Multiple Image processing:Get details of multiple images at a time", divider=True)
+    VIDEO_URL = "https://youtu.be/wj2Gq58sN3U"
+    st.video(VIDEO_URL, loop=True)
 
 
 
