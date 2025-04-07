@@ -49,6 +49,11 @@ def show_welcome_page():
         </div>
         """,
         unsafe_allow_html=True)  # Replace with your logo path
+    st.markdown("""<style>
+        .title2 {font-size:30px; color: #C52831; text-align: center; font-weight: bold;}
+        </style>""", unsafe_allow_html=True)
+
+    st.markdown('<p class="title2">School of Aeronautical Engineering</p>', unsafe_allow_html=True)
     
     st.title("Welcome to Drone Terrain Analysis")
     st.markdown("""
