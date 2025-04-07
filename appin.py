@@ -250,7 +250,7 @@ elif app_mode == "Know your terrain":
 
         
     # Load Model
-    model_path = r"terrain_classifier_eurosat (1).keras"
+    model_path = r"terrain_classifier_eurosat (2).keras"
     try:
         model = load_model(model_path)
         st.success(f"Model loaded successfully from {model_path}")
